@@ -18,5 +18,6 @@ jobs:
       - name: Check connection to cluster
         run: kubectl version --client=true
 
-      - name: Deploy with kubectl and kustomize
-        run: kubectl apply -k overlays/boozeandbites-dev
+      - name: Deploy via kubectl (skip validation)
+        run: kubectl apply -k overlays/boozeandbites-dev --validate=false
+

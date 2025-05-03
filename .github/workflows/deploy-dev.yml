@@ -16,10 +16,10 @@ jobs:
           echo "${{ secrets.KUBECONFIG_LOCAL }}" | base64 -d > ~/.kube/config
 
       - name: Check connection to cluster
-        run: microk8s.kubectl version --client=true
+        run: kubectl version --client=true
 
       - name: Show rendered manifests
-        run: microk8s.kubectl kustomize overlays/boozeandbites-dev
+        run: kubectl kustomize overlays/boozeandbites-dev
 
       - name: Check cluster connection
         run: |

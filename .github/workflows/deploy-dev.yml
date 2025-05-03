@@ -15,8 +15,8 @@ jobs:
           mkdir -p ~/.kube
           echo "${{ secrets.KUBECONFIG_LOCAL }}" | base64 -d > ~/.kube/config
 
-      - name: Check cluster connection
-        run: kubectl version --short
+      - name: Check connection to cluster
+        run: kubectl version --client=true
 
       - name: Deploy with kubectl and kustomize
         run: kubectl apply -k overlays/boozeandbites-dev

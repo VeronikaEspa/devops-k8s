@@ -21,6 +21,12 @@ jobs:
       - name: Show rendered manifests
         run: kubectl kustomize overlays/boozeandbites-dev
 
+      - name: Check cluster connection
+        run: |
+          kubectl version
+          kubectl cluster-info
+          kubectl get pods -A
+
       - name: Deploy via kubectl (skip validation)
         run: kubectl apply -k overlays/boozeandbites-dev --validate=false
 

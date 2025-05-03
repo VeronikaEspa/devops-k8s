@@ -4,7 +4,7 @@ metadata:
   name: boozeandbites-frontend
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   tls:
     - hosts:

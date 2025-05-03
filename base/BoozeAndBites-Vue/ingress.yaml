@@ -11,13 +11,3 @@ spec:
         - boozeandbites.vesparragoza.dev
       secretName: boozeandbites-frontend-tls
   rules:
-    - host: boozeandbites.vesparragoza.dev
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: boozeandbites-frontend
-                port:
-                  number: 80

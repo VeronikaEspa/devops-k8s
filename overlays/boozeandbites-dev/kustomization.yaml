@@ -1,4 +1,7 @@
-namespace: boozeandbites-frontend-dev
+namespace: boozeandbites-dev
 resources:
-  - ../../base/BoozeAndBites-Vue
+  - ../../base/BoozeAndBites-Vue/deployment.yaml
+  - ../../base/BoozeAndBites-Vue/service.yaml
+  - ../../base/BoozeAndBites-Vue/ingress.yaml
+  - ../../base/BoozeAndBites-Vue/grafana-sidecar.yaml
   - namespace.yaml

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoozeAndBites-Flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boozeAndBites-backend
+  template:
+    metadata:
+      labels:
+        app: boozeAndBites-backend
+    spec:
+      containers:
+        - name: boozeAndBites-backend
+          image: ghcr.io/VeronikaEspa/BoozeAndBites-Flask:latest
+          ports:
+            - containerPort: 8070

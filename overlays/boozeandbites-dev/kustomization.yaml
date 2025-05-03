@@ -1,0 +1,4 @@
+namespace: boozeandbites-frontend-dev
+resources:
+  - ../../base/BoozeAndBites-Vue
+  - namespace.yaml

@@ -1,0 +1,18 @@
+name: Deploy to MicroK8s (Dev)
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up kubeconfig
+        run: echo "${{ secrets.KUBECONFIG_DEV }}" > kubeconfig && export KUBECONFIG=$PWD/kubeconfig
+
+      - name: Deploy with kubectl and kustomize
+        run: |
+          kubectl apply -k overlays/dev

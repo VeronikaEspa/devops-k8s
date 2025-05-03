@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boozeandbites-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boozeandbites-frontend
+  template:
+    metadata:
+      labels:
+        app: boozeandbites-frontend
+    spec:
+      containers:
+        - name: boozeandbites-frontend
+          image: ghcr.io/VeronikaEspa/BoozeAndBites-Vue:latest
+          ports:
+            - containerPort: 8071

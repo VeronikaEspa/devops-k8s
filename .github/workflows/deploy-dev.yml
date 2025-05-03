@@ -16,17 +16,17 @@ jobs:
           echo "${{ secrets.KUBECONFIG_LOCAL }}" | base64 -d > ~/.kube/config
 
       - name: Check connection to cluster
-        run: kubectl version --client=true
+        run: microk8s.kubectl version --client=true
 
       - name: Show rendered manifests
-        run: kubectl kustomize overlays/boozeandbites-dev
+        run: microk8s.kubectl kustomize overlays/boozeandbites-dev
 
       - name: Check cluster connection
         run: |
-          kubectl version
-          kubectl cluster-info
-          kubectl get pods -A
+          microk8s.kubectl version
+          microk8s.kubectl cluster-info
+          microk8s.kubectl get pods -A
 
       - name: Deploy via kubectl (skip validation)
-        run: kubectl apply -k overlays/boozeandbites-dev --validate=false
+        run: microk8s.kubectl apply -k overlays/boozeandbites-dev --validate=false
 

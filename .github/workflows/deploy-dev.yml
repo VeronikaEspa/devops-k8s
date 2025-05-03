@@ -15,4 +15,4 @@ jobs:
 
       - name: Deploy with kubectl and kustomize
         run: |
-          kubectl apply -k overlays/dev
+          kubectl apply -k overlays/boozeandbites-dev
